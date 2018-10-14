@@ -23,6 +23,7 @@ A Desktop Implementation of Conway's famous Game of Life.
 ## Usage
 
 Click tiles to toggle their 'aliveness'. Use the UI panels on the footer to choose surrounding parameters.
+Press Ctrl and use the mouse to move the game board or zoom in on it(out of the box AnimationEngine functionality).
 
 ## License
 
