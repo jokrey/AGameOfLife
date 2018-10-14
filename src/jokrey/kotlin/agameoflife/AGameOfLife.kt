@@ -6,6 +6,8 @@ import jokrey.utilities.animation.util.AESize
 import jokrey.utilities.bwimage_decode
 import jokrey.utilities.bwimage_encode
 import java.awt.BorderLayout
+import java.awt.event.ActionEvent
+import java.awt.event.ActionListener
 import javax.swing.BoxLayout
 import javax.swing.JButton
 import javax.swing.JPanel
@@ -74,61 +76,23 @@ fun main(args:Array<String>) {
         toggleModeJB.text = if (engine.edges_are_death_mode) "EDGE(DEATH)" else "EDGE(CYCLE)"
     }
 
-    val widthInputDoc = IntegersOnlyDocument()
-    widthInputField.setDocument(widthInputDoc)
-    widthInputDoc.addDocumentListener(object : DocumentListener {
-        override fun changedUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(width = getInt(widthInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-        }
-
-        override fun insertUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(width = getInt(widthInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-        }
-
-        override fun removeUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(width = getInt(widthInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-        }
+    widthInputField.setDocument(IntegersOnlyDocument())
+    widthInputField.addDocumentListener(java.awt.event.ActionListener {
+        engine.setGameboardSize(width = getInt(widthInputField.fieldText, 10))
+        pipe.resetDrawBounds(engine)
     })
     widthInputField.tf.text = engine.getGBWidth().toString()
 
-    val heightInputDoc = IntegersOnlyDocument()
-    heightInputField.setDocument(heightInputDoc)
-    heightInputDoc.addDocumentListener(object : DocumentListener {
-        override fun changedUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(height = getInt(heightInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-
-        }
-
-        override fun insertUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(height = getInt(heightInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-        }
-
-        override fun removeUpdate(e: DocumentEvent?) {
-            engine.setGameboardSize(height = getInt(heightInputField.fieldText, 10))
-            pipe.resetDrawBounds(engine)
-        }
+    heightInputField.setDocument(IntegersOnlyDocument())
+    heightInputField.addDocumentListener(java.awt.event.ActionListener {
+        engine.setGameboardSize(height = getInt(heightInputField.fieldText, 10))
+        pipe.resetDrawBounds(engine)
     })
     heightInputField.tf.text = engine.getGBHeight().toString()
 
-    val tickInputDoc = IntegersOnlyDocument()
-    tickInputField.setDocument(tickInputDoc)
-    tickInputDoc.addDocumentListener(object : DocumentListener {
-        override fun changedUpdate(e: DocumentEvent?) {
-            engine.gameOfLifeTicksPerSecond = getInt(tickInputField.fieldText, 3)
-        }
-
-        override fun insertUpdate(e: DocumentEvent?) {
-            engine.gameOfLifeTicksPerSecond = getInt(tickInputField.fieldText, 3)
-        }
-
-        override fun removeUpdate(e: DocumentEvent?) {
-            engine.gameOfLifeTicksPerSecond = getInt(tickInputField.fieldText, 3)
-        }
+    tickInputField.setDocument(IntegersOnlyDocument())
+    tickInputField.addDocumentListener(java.awt.event.ActionListener {
+        engine.gameOfLifeTicksPerSecond = getInt(tickInputField.fieldText, 3)
     })
     tickInputField.tf.text = engine.ticksPerSecond.toString()
 
