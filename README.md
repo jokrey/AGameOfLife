@@ -30,4 +30,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgement
 
-* The idea and algorithm behind this is obviously not mine. It is the Conway's famous [Game Of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+* The idea and algorithm behind this is obviously not mine. It is Conway's famous [Game Of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
