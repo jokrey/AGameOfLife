@@ -76,7 +76,7 @@ open class GameOfLifeEngine(
         }
     }
 
-    public override fun calculateTick() {
+    public override fun calculateTickImpl() {
         val tempGameboard  //most ugly kotlin code to date
                 = Array(getGBWidth()) {Array(getGBHeight()) {false} }
         for(x in 0 until getGBWidth()) {
