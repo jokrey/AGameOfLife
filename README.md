@@ -5,7 +5,7 @@ A Desktop Implementation of Conway's famous Game of Life.
 ### Installing
 
 * Build it yourself - Clone the repository with the 'git clone' command.
-(Additionally there are a number of dependencies on the jokrey.utilities.animation package(another repository), and utility-algorithms-java and utility-algorithms-kotlin, so clone that into the path also)
+(Additionally, there are a number of dependencies on the jokrey.utilities.animation package(another repository), and utility-algorithms-java and utility-algorithms-kotlin, so clone that into the path also)
 * Download one of the releases (possibly easier)
 * Download the android app that uses the same underlying engine. (Search the Google Play Store)
 
